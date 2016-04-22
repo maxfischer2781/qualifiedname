@@ -1,6 +1,6 @@
 import unittest
 import sys
-from qualifiedname import QualNameMeta
+from qualifiedname import QualNameMeta, set_qualname_recursive
 
 PY3K = sys.version_info >= (3,)
 
@@ -42,6 +42,9 @@ class Scope1(metaclass=QualNameMeta):
                 pass
 """)
 
+set_qualname_recursive(NoScope)
+set_qualname_recursive(Scope1Standalone)
+set_qualname_recursive(Scope1)
 
 class TestObjectPrimitives(unittest.TestCase):
     def test_unnested(self):
