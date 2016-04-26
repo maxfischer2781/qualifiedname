@@ -60,13 +60,13 @@ automatically gain the ``__qualname__`` attribute.
   >>> C.D.g.__qualname__
   'C.D.g'
 
-:note: Due to how ``QualNameMeta`` operates, ``__qualname__`` will be
-       created for regular nested classes as well.
+:note: There are different ways for ``QualNameMeta`` to derive ``__qualname__``.
+       See the class' documentation for details.
 
 set_qualname_recursive
 ......................
 
-The function ``set_qualname_recursive`` implements most of the actual magic
+The function ``set_qualname_recursive`` implements one of the magic methods
 behind ``QualNameMeta``. You can use it manually to patch existing objects.
 
 ::

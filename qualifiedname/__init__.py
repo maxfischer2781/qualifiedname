@@ -1,1 +1,2 @@
-from qualmeta import QualNameMeta, set_qualname_recursive
+from qualifiedname.qualmeta import QualNameMeta
+from qualifiedname.qname_recursive import set_qualname_recursive
