@@ -1,7 +1,7 @@
 from __future__ import print_function
 import sys
 import inspect
-from qualifiedname import qualinspect
+from qualifiedname import qname_inspect
 from qualifiedname import qname_recursive
 
 from qualifiedname.meta import PY3K_QUALNAME
@@ -58,7 +58,7 @@ else:
                     qname_recursive.set_qualname_recursive(new_cls)
                 elif class_dict.get('_qname_method', mcs._qname_method) == QNAME_AST:
                     classdef_line = mcs._trace_classdef_line()
-                    class_dict['__qualname__'] = qualinspect.get_qualname(class_dict['__module__'], classdef_line)
+                    class_dict['__qualname__'] = qname_inspect.get_qualname(class_dict['__module__'], classdef_line)
                     mcs._propagate_qualname(class_dict)
                     new_cls = type.__new__(mcs, name, bases, class_dict)
                 else:
